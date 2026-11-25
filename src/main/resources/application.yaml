@@ -1,3 +1,7 @@
 spring:
   application:
     name: msa5-spring
+  web:
+    error:
+      include-stacktrace: always
+      include-message: always # 에러 낫을 때 상세 정보를 언제나 보겠다

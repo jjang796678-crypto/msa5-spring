@@ -1,7 +1,6 @@
 package org.msa.msa5spring.controller;
 
 import org.msa.msa5spring.request.QueryRequestDTO;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
