@@ -47,7 +47,7 @@ public class GlobalExceptionHandler {
         // 자습 시작
         StringBuilder sb = new StringBuilder();
         errors.forEach((k, v) -> {
-            if (sb.length() > 0) sb.append(", ");
+            if (!sb.isEmpty()) sb.append(", ");
             sb.append(k).append("=").append(v);
         });
 
