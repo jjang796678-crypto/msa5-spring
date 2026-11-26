@@ -42,6 +42,10 @@ public class GlobalExceptionHandler {
                         // fieldError -> Objects.requireNonNullElse(fieldError.getDefaultMessage(), "유효하지 않은 값입니다.") 로 정리 가능
                         (existing, replacement) -> existing // key가 중복 됬을 때 처리
                 ));
+        log.debug("{}\n{}", "***유효성 체크 에러***", errors);
+
+
+
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(
@@ -61,7 +65,7 @@ public class GlobalExceptionHandler {
         log.debug("디버그 로깅");
         log.info("인포 로깅");
         log.warn("워닝 로깅");
-        log.error("에러 로깅");
+        log.error("에러 로깅", e);
 
         return ResponseEntity
                 .status(500)
