@@ -43,13 +43,28 @@ public class GlobalExceptionHandler {
                         (existing, replacement) -> existing // key가 중복 됬을 때 처리
                 ));
         log.debug("{}\n{}", "***유효성 체크 에러***", errors);
-
+        log.debug("Errors: {}", errors);
         // 자습 시작
+        /* 초안
+        StringBuilder sb = new StringBuilder();
+        errors.forEach((k, v) -> {
+            if (sb.length() > 0) sb.append(", ");
+            sb.append(k).append("=").append(v);
+        });
+        */
         StringBuilder sb = new StringBuilder();
         errors.forEach((k, v) -> {
             if (!sb.isEmpty()) sb.append(", ");
             sb.append(k).append("=").append(v);
         });
+
+        // if (log.isDebugEnabled()) {
+        //     String result = errors.entrySet().stream()
+        //             .map(e -> e.getKey() + "=" + e.getValue())
+        //             .collect(Collectors.joining(", "));
+        //     log.debug(result);
+        // }
+
 
         String result = sb.toString();
 
