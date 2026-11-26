@@ -44,7 +44,17 @@ public class GlobalExceptionHandler {
                 ));
         log.debug("{}\n{}", "***유효성 체크 에러***", errors);
 
+        // 자습 시작
+        StringBuilder sb = new StringBuilder();
+        errors.forEach((k, v) -> {
+            if (sb.length() > 0) sb.append(", ");
+            sb.append(k).append("=").append(v);
+        });
 
+        String result = sb.toString();
+
+        log.debug(result);
+        // 자습 끝
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
