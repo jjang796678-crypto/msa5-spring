@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
                         (existing, replacement) -> existing // key가 중복 됬을 때 처리
                 ));
         log.debug("{}\n{}", "***유효성 체크 에러***", errors);
-        log.debug("Errors: {}", errors);
+
         // 자습 시작
         /* 초안
         StringBuilder sb = new StringBuilder();
@@ -64,7 +64,6 @@ public class GlobalExceptionHandler {
         //             .collect(Collectors.joining(", "));
         //     log.debug(result);
         // }
-
 
         String result = sb.toString();
 
@@ -90,7 +89,7 @@ public class GlobalExceptionHandler {
         log.debug("디버그 로깅");
         log.info("인포 로깅");
         log.warn("워닝 로깅");
-        log.error("에러 로깅", e);
+        log.error("에러 로깅");
 
         return ResponseEntity
                 .status(500)
