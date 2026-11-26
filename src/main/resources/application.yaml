@@ -3,10 +3,14 @@ spring:
     name: msa5-spring
   web:
     error:
-      include-stacktrace: always
-      include-message: always # 에러 낫을 때 상세 정보를 언제나 보겠다
+      include-stacktrace: never
+      include-message: never
+      # 에러 낫을 때 상세 정보를 언제나 보겠다
 logging:
+  file:
+    name: logs/error.log
   level:
-    root: info
-    org.msa.msa5springng: debug
-debug: true
+    # error > warn > info > debug > trace
+    root: warn
+    org.msa.msa5spring: debug
+debug: false
