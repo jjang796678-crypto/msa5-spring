@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mapper namespace="org.msa.msa5spring.mapper.EmployeeMapper">
+    <resultMap id="EmployeeResultMap" type="org.msa.msa5spring.entity.Employee">
+        <id column="emp_id" property="emp_id"/> <!-- pk 만들 때 이용 -->
+        <result column="name" property="name"/> <!-- 일반 컬럼 만들 때 이용 -->
+        <result column="birth" property="birth"/>
+        <result column="gender" property="gender"/>
+        <result column="hire_at" property="hireAt"/>
+        <result column="fire_at" property="fireAt"/>
+        <result column="sup_id" property="supId"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+        <result column="deleted_at" property="deletedAt"/>
+    </resultMap>
+</mapper>
